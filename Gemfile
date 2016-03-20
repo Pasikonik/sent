@@ -12,13 +12,13 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5.x'
 gem 'jbuilder', '~> 2.0'
 
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'koala'
 gem 'carrierwave'
 gem 'sidekiq'
 gem 'devise', github: 'plataformatec/devise'
 gem 'devise-bootstrap-views'
-gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'simple_form'
 
 group :development, :test do
   gem 'pry-byebug'
