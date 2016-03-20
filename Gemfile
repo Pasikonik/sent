@@ -15,7 +15,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
 gem 'koala'
 gem 'carrierwave'
+gem 'sidekiq'
 gem 'devise', github: 'plataformatec/devise'
+gem 'devise-bootstrap-views'
+gem 'bootstrap', '~> 4.0.0.alpha3'
 
 group :development, :test do
   gem 'pry-byebug'
