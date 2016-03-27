@@ -1,3 +1,111 @@
-// Place all the styles related to the destinations controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.destination-index {
+  border: 1px solid gray;
+  border-radius: 10px;
+  text-transform: capitalize;
+  height: 140px;
+  width: 195px;
+  margin: 10px;
+
+  &:hover {
+    border: 2px solid $green;
+  }
+
+
+
+  &__name {
+    padding: 30px 5px 30px 5px;
+    text-align: center;
+    width: 161px;
+    height: 106px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+      color: $green;
+    }
+  }
+}
+
+.new-items {
+  .upload {
+    height: 64px;
+    width: 64px;
+    background: image-url("upload.png");
+    overflow: hidden;
+
+    input {
+      display: block !important;
+      width: 64px !important;
+      height: 64px !important;
+      opacity: 0 !important;
+      overflow: hidden !important;
+      cursor: pointer;
+    }
+  }
+
+  .progress {
+    margin-top: 4px;
+    opacity: 0.0;
+  }
+}
+
+.items {
+  // padding: 10px;
+
+  .item {
+    position: relative;
+
+    &:hover {
+      a {
+        display: block;
+      }
+    }
+
+    a {
+      display: none;
+      color: $red-icon;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 3px;;
+      right: 15px;
+    }
+
+    img {
+      // vertical-align: middle;
+    }
+  }
+}
+
+.tab-pane {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0px 0px 5px 5px;
+  padding: 10px;
+}
+
+.nav-tabs {
+  margin-bottom: 0;
+}
+
+.items, .row > :nth-child(4n+1) {
+  clear:left;
+}
+
+.green {
+  color: $green;
+}
+
+.red {
+  color: $red-icon;
+}
+
+.bullet {
+  vertical-align: middle;
+  font-size: 35px;
+}
