@@ -1,0 +1,6 @@
+<div class="item col-xs-3 text-center" id="item-<%= item.id %>">
+  <%= image_tag item.source, class: 'img-responsive' %>
+  <%= link_to item, method: :delete, remote: true do %>
+    <%= fa_icon 'trash fw 2x', 'item-id': item.id %>
+  <% end %>
+</div>
