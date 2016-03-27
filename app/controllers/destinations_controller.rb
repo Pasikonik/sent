@@ -1,7 +1,8 @@
 class DestinationsController < ApplicationController
-  before_action :set_destination, only: [:show, :edit, :update, :destroy]
+  before_action :set_destination, only: [:show, :edit, :update, :destroy, :add_items]
 
   def index
+    @destination = Destination.new
     @destinations = Destination.all
   end
 
@@ -13,6 +14,7 @@ class DestinationsController < ApplicationController
   end
 
   def edit
+    @pages = @destination.user.page_list
   end
 
   def create
@@ -50,11 +52,12 @@ class DestinationsController < ApplicationController
   end
 
   private
-    def set_destination
-      @destination = Destination.find(params[:id])
-    end
 
-    def destination_params
-      params.require(:destination).permit(:name, :user_id, :item_id)
-    end
+  def set_destination
+    @destination = Destination.find(params[:id])
+  end
+
+  def destination_params
+    params.require(:destination).permit(:name, :user_id, :item_id, :fb_page)
+  end
 end
