@@ -1,3 +1,66 @@
-<div class="destination">
-  <%= @destination.name %>
+<div class="row">
+  <div class="col-md-2">
+    <%= link_to 'Back', destinations_path, class: 'btn btn-default' %>
+  </div>
+
+  <div class="col-md-8 text-center">
+    <h1>[ <%= @destination.name %> ]</h1>
+    <b>fb:</b> <span class="bullet <%= check_integration(@destination) ? 'green' : 'red' %>">&bull;</span>
+  </div>
+
+  <div class="pull-right">
+    <%= link_to 'Edit', edit_destination_path(@destination.id), class: 'btn btn-default' %>
+  </div>
+</div>
+
+<hr>
+
+<div class="new-items">
+  <%= form_for Item.new do |f|%>
+    <%= f.hidden_field :destination_id, value: @destination.id %>
+    <div class="upload center-block">
+      <%= f.file_field :source, multiple: true, name: 'item[source]', id: 'files-upload'%>
+    </div>
+  <% end %>
+
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs nav-justified" role="tablist">
+  <li role="presentation" class="active"><a href="#queue" aria-controls="queue" role="tab" data-toggle="tab">Queue (<%= @destination.queue.count %>)</a></li>
+  <li role="presentation"><a href="#sent" aria-controls="sent" role="tab" data-toggle="tab">Sent (<%= @destination.sent_list.count %>)</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane fade in active" id="queue">
+    <div class="items queue row">
+      <% @destination.queue.each do |item| %>
+        <div class="item col-xs-3 text-center" id="item-<%= item.id %>">
+          <%= image_tag item.source, class: 'img-responsive' %>
+          <%= link_to item, method: :delete, remote: true do %>
+            <%= fa_icon 'trash fw 2x', 'item-id': item.id %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="sent">
+    <div class="items row">
+      <% @destination.sent_list.each do |item| %>
+        <div class="item col-xs-3 text-center" id="item-<%= item.id %>">
+          <%= image_tag item.source, class: 'img-responsive' %>
+          <%= link_to item, method: :delete, remote: true do %>
+            <%= fa_icon 'trash fw 2x', 'item-id': item.id %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
