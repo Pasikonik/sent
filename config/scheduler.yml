@@ -1,0 +1,4 @@
+mass_push_items:
+  cron: "0 0 14 * * *"
+  class: MassJob
+  description: "Mass push items destinations"
