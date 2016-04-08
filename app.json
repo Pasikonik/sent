@@ -1,0 +1,53 @@
+{
+  "name": "sent",
+  "scripts": {
+  },
+  "env": {
+    "AWS_ACCESS_KEY": {
+      "required": true
+    },
+    "AWS_BUCKET_NAME": {
+      "required": true
+    },
+    "AWS_SECRET_KEY": {
+      "required": true
+    },
+    "FACEBOOK_KEY": {
+      "required": true
+    },
+    "FACEBOOK_SECRET": {
+      "required": true
+    },
+    "LANG": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "RAILS_LOG_TO_STDOUT": {
+      "required": true
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true
+    },
+    "REDIS_PROVIDER": {
+      "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "required": true
+    }
+  },
+  "addons": [
+    "heroku-postgresql",
+    "heroku-redis",
+    "redistogo"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
