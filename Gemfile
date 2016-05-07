@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.3.0'
 
-gem 'rails', '>= 5.0.0.beta3', '< 5.1'
+gem 'rails', '>= 5.0.0.rc1', '< 5.1'
 gem 'pg', '~> 0.18'
-gem 'puma'
+gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -21,8 +21,7 @@ gem 'jquery-fileupload-rails'
 gem 'fog'
 gem 'sidekiq', github: 'mperham/sidekiq', branch: 'rails5'
 gem 'sidekiq-scheduler', '~> 2.0'
-gem 'whenever', github: 'javan/whenever', branch: 'master', require: false
-gem 'devise', github: 'plataformatec/devise'
+gem 'devise'
 gem 'omniauth-facebook'
 gem 'devise-bootstrap-views'
 gem 'simple_form'
@@ -32,11 +31,11 @@ gem 'font-awesome-rails'
 group :development, :test do
   gem 'pry-remote'
   gem 'pry-byebug'
-  gem 'byebug'
+  gem 'byebug', platform: :mri
 end
 
 group :development do
-  gem 'web-console', '~> 3.0'
+  gem 'web-console'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
