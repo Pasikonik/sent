@@ -3,15 +3,6 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
-  # devise_scope :user do
-  #   # get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session
-  #   delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
-  # end
-
-  # devise_scope :user do
-  #   delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
-  # end
-
   resources :destinations
   resources :items
 end
