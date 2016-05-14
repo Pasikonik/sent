@@ -22,7 +22,6 @@ gem 'sidekiq', github: 'mperham/sidekiq', branch: 'rails5'
 gem 'sidekiq-scheduler', '~> 2.0'
 gem 'devise'
 gem 'omniauth-facebook'
-gem 'devise-bootstrap-views'
 gem 'simple_form'
 gem 'font-awesome-rails'
 
