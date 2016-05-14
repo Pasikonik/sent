@@ -8,6 +8,17 @@ GIT
       connection_pool (~> 2.2, >= 2.2.0)
       redis (~> 3.2, >= 3.2.1)
 
+GIT
+  remote: git://github.com/plataformatec/devise.git
+  revision: 28f0e3281a9d7b9d0d6a749bb4eb3743a9eb8665
+  specs:
+    devise (4.1.0)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 5.1)
+      responders
+      warden (~> 1.2.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -78,12 +89,6 @@ GEM
     concurrent-ruby (1.0.2)
     connection_pool (2.2.0)
     debug_inspector (0.0.2)
-    devise (4.1.0)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 4.1.0, < 5.1)
-      responders
-      warden (~> 1.2.3)
     erubis (2.7.0)
     excon (0.49.0)
     execjs (2.6.0)
@@ -399,7 +404,7 @@ DEPENDENCIES
   carrierwave
   carrierwave_backgrounder
   coffee-rails (~> 4.1.0)
-  devise
+  devise!
   fog
   font-awesome-rails
   jbuilder (~> 2.0)

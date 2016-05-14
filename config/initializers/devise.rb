@@ -244,7 +244,7 @@ Devise.setup do |config|
   config.omniauth :facebook, Rails.application.secrets.facebook_key,
                              Rails.application.secrets.facebook_secret,
                              scope: 'email,public_profile,pages_show_list,publish_pages',
-                             info_fields: 'email,name,image',
+                             info_fields: 'email,name',
                              callback_url: 'http://localhost:3000/users/auth/facebook/callback'
 
   # ==> Warden configuration
